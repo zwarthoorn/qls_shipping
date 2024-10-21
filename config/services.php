@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    'qls' => [
+        'login' => [
+            'username' => env('QLS_USERNAME'),
+            'password' => env('QLS_PASSWORD')
+        ],
+        'extra' => [
+            'companyId' => '9e606e6b-44a4-4a4e-a309-cc70ddd3a103',
+            'brandId' => 'e41c8d26-bdfd-4999-9086-e5939d67ae28'
+        ]
+    ]
+
 ];
