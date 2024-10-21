@@ -69,7 +69,6 @@ class ShippingController extends Controller
         $data = $service->getShippingLabel($build)['data'];
 
         //get label
-
         $label = Http::get($data['labels']['a6']);
 
 
@@ -91,24 +90,10 @@ class ShippingController extends Controller
             'imagePath' => $image
         ];
 
-//        dd(Storage::disk('public')->url('image.jpg'));
-        //        dd(Storage::disk('public')->url('app/public/image.jpg'));
-        // Load the Blade view and pass data
         $pdf = PDF::loadView('shipping.label', $data)->setPaper([0, 0, 595.28, 841.89], 'portrait');
 
-        // Return PDF for download or stream in the browser
-        return $pdf->download(); // or use `stream()` to vie
+        return $pdf->download();
     }
 
-
-    public function generatePdf($name,$build)
-    {
-
-
-    }
-
-
-
-    // Function to merge two PDFs
 
 }
